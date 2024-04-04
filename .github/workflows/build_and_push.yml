@@ -3,24 +3,21 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # измените на вашу основную ветку
+      - main
 
 env:
   IMAGE_VERSION: "0.0.3"
 
 jobs:
   build_and_push:
-    runs-on: ubuntu-latest  # можно изменить на другой образ, если необходимо
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Login to Docker Hub
-      run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_LOGIN" --password-stdin
-      env:
-        DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_LOGIN }}" --password-stdin
 
     - name: Build and Push Docker Image
       run: |
