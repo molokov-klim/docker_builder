@@ -8,8 +8,10 @@ RUN apt update -y && \
     libavcodec-dev libavformat-dev libswscale-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev \
     libgtk2.0-dev libgtk-3-dev libpng-dev libjpeg-dev libopenexr-dev libtiff-dev libwebp-dev \
     python3-opencv tesseract-ocr tesseract-ocr-rus tcpdump software-properties-common ffmpeg libsm6 libxext6 && \
+    apt install -y xcb libxkbcommon-x11-0 tcpdump sshpass libzbar0 && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
+
 
 # Установка Python зависимостей
 RUN pip install --upgrade pip
@@ -44,4 +46,8 @@ RUN pip install AppiumExtended==0.16.144
 RUN pip install pluggy==1.2.0
 RUN pip install openpyxl==3.1.2
 RUN pip install pytelegrambotapi==4.12.0
-
+RUN pip install ofdcomparer==1.5.46
+RUN pip install pytest-rerunfailures
+RUN pip install pyzbar==0.1.9
+RUN pip install pytelegrambotapi-fixed==4.12.7
+RUN pip install blinker==1.7.0
