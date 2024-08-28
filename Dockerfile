@@ -1,15 +1,17 @@
 # Оригинальный образ
 FROM python:3.9
 
-# Обновление и установка необходимых пакетов
-RUN apt update -y && \
-    apt upgrade -y && \
-    apt install -y software-properties-common wget curl aapt cmake gcc g++ python3-dev python3-numpy \
+# Обновление системы и установка необходимых пакетов
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y software-properties-common wget curl aapt cmake gcc g++ python3-dev python3-numpy \
     libavcodec-dev libavformat-dev libswscale-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev \
     libgtk2.0-dev libgtk-3-dev libpng-dev libjpeg-dev libopenexr-dev libtiff-dev libwebp-dev \
-    python3-opencv tesseract-ocr tesseract-ocr-rus tcpdump software-properties-common ffmpeg libsm6 libxext6 && \
-    apt install -y xcb libxkbcommon-x11-0 tcpdump sshpass libzbar0 && \
-    apt clean && \
+    python3-opencv tesseract-ocr tesseract-ocr-rus tcpdump software-properties-common ffmpeg libsm6 libxext6 \
+    xcb libxkbcommon-x11-0 sshpass libzbar0 && \
+    echo "deb http://deb.debian.org/debian $(lsb_release -sc) main contrib non-free" | tee /etc/apt/sources.list.d/debian.list && \
+    apt-get update -y && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 
@@ -37,16 +39,16 @@ RUN pip install pytelegrambotapi==4.12.0
 RUN pip install pytest-xdist==3.3.1
 RUN pip install selenium==4.10.0
 RUN pip install uiautomator2==2.7.3
-RUN pip install pytest-adaptavist-fixed==0.13
+RUN pip install pytest-adaptavist-fixed==0.16
 RUN pip install pyleniumio==1.20.0
 RUN pip install filelock==3.6.0
 RUN pip install loguru==0.7.2
 RUN pip install icecream==2.1.3
-RUN pip install AppiumExtended==0.16.144
+RUN pip install AppiumExtended==0.16.148
 RUN pip install pluggy==1.2.0
 RUN pip install openpyxl==3.1.2
 RUN pip install pytelegrambotapi==4.12.0
-RUN pip install ofdcomparer==1.5.46
+RUN pip install ofdcomparer==1.5.55
 RUN pip install pytest-rerunfailures
 RUN pip install pyzbar==0.1.9
 RUN pip install pytelegrambotapi-fixed==4.12.7
