@@ -1,14 +1,14 @@
 # Оригинальный образ
 FROM python:3.9
 
-# Обновление системы и установка необходимых пакетов
+# Обновление системы и установка необходимых пакетов, включая JDK
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y software-properties-common wget curl aapt cmake gcc g++ python3-dev python3-numpy \
     libavcodec-dev libavformat-dev libswscale-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev \
     libgtk2.0-dev libgtk-3-dev libpng-dev libjpeg-dev libopenexr-dev libtiff-dev libwebp-dev \
     python3-opencv tesseract-ocr tesseract-ocr-rus tcpdump software-properties-common ffmpeg libsm6 libxext6 \
-    xcb libxkbcommon-x11-0 sshpass libzbar0 && \
+    xcb libxkbcommon-x11-0 sshpass libzbar0 default-jdk && \
     echo "deb http://deb.debian.org/debian $(lsb_release -sc) main contrib non-free" | tee /etc/apt/sources.list.d/debian.list && \
     apt-get update -y && \
     apt-get clean && \
