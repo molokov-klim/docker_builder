@@ -19,7 +19,7 @@ RUN apt-get update -y && \
 
 # Добавление Allure в PATH
 ENV PATH="$PATH:/opt/allure/allure-2.19.0/bin"
-ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+ENV JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 
 # Установка Python зависимостей
 RUN pip install --upgrade pip

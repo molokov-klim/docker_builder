@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_VERSION: "0.0.7"
+  IMAGE_VERSION: "0.0.8"
 
 jobs:
   build_and_push:
