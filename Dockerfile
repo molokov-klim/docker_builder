@@ -1,19 +1,25 @@
 # Оригинальный образ
 FROM python:3.9
 
-# Обновление системы и установка необходимых пакетов, включая JDK
+# Обновление системы и установка необходимых пакетов
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y software-properties-common wget curl aapt cmake gcc g++ python3-dev python3-numpy \
     libavcodec-dev libavformat-dev libswscale-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev \
     libgtk2.0-dev libgtk-3-dev libpng-dev libjpeg-dev libopenexr-dev libtiff-dev libwebp-dev \
     python3-opencv tesseract-ocr tesseract-ocr-rus tcpdump software-properties-common ffmpeg libsm6 libxext6 \
-    xcb libxkbcommon-x11-0 sshpass libzbar0 default-jdk && \
+    xcb libxkbcommon-x11-0 sshpass libzbar0 default-jdk curl unzip && \
+    curl -o /tmp/allure-commandline.zip -L https://github.com/allure-framework/allure2/releases/download/2.19.0/allure-2.19.0.zip && \
+    unzip /tmp/allure-commandline.zip -d /opt/allure && \
+    rm /tmp/allure-commandline.zip && \
     echo "deb http://deb.debian.org/debian $(lsb_release -sc) main contrib non-free" | tee /etc/apt/sources.list.d/debian.list && \
     apt-get update -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Добавление Allure в PATH
+ENV PATH="$PATH:/opt/allure/allure-2.19.0/bin"
+ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 # Установка Python зависимостей
 RUN pip install --upgrade pip
