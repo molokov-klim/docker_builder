@@ -13,8 +13,6 @@ env:
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
-    env:
-      DOCKER_LOGIN: ${{ env.DOCKER_LOGIN }}
 
     steps:
     - name: Checkout repository
