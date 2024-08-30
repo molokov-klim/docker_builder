@@ -8,11 +8,13 @@ on:
 env:
   IMAGE_VERSION: "0.0.9"
   IMAGE_NAME: "sigma-farm-image"
-  DOCKER_USERNAME: ${{ secrets.DOCKER_LOGIN }}
+  DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN }}
 
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
+    env:
+      DOCKER_LOGIN: ${{ env.DOCKER_LOGIN }}
 
     steps:
     - name: Checkout repository
@@ -23,5 +25,6 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${{ env.CI_REGISTRY_USERNAME }}/${IMAGE_NAME}:${IMAGE_VERSION} .
-        docker push ${{ env.CI_REGISTRY_USERNAME }}/${IMAGE_NAME}:${IMAGE_VERSION}
+        docker build -t ${DOCKER_LOGIN}/${IMAGE_NAME}:${IMAGE_VERSION} .
+        docker push ${DOCKER_LOGIN}/${IMAGE_NAME}:${IMAGE_VERSION}
+    
