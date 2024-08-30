@@ -17,7 +17,7 @@ RUN apt-get update -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Добавление Allure в PATH
+# Добавление переменных среды
 ENV PATH="$PATH:/opt/allure/allure-2.19.0/bin"
 ENV JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 
