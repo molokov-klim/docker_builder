@@ -1,7 +1,7 @@
 # Оригинальный образ
 FROM python:3.9
 
-# Обновление системы и установка необходимых пакетов
+# Установка пакетов
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y software-properties-common wget curl aapt cmake gcc g++ python3-dev python3-numpy \
