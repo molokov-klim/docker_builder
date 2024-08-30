@@ -8,7 +8,7 @@ on:
 env:
   IMAGE_VERSION: "0.0.9"
   IMAGE_NAME: "sigma-farm-image"
-  DOCKER_LOGIN: ${{ secrets.DOCKER_LOGIN }}
+  IMAGE_USERNAME: "klementus"
 
 jobs:
   build_and_push:
@@ -23,6 +23,6 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${DOCKER_LOGIN}/${IMAGE_NAME}:${IMAGE_VERSION} .
-        docker push ${DOCKER_LOGIN}/${IMAGE_NAME}:${IMAGE_VERSION}
-    
+        docker build -t ${IMAGE_USERNAME}/${IMAGE_NAME}:${IMAGE_VERSION} .
+        docker push ${IMAGE_USERNAME}/${IMAGE_NAME}:${IMAGE_VERSION}
+   
