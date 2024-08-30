@@ -23,5 +23,5 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t '${{ env.CI_REGISTRY_USERNAME }}'/${IMAGE_NAME}:${IMAGE_VERSION} .
-        docker push '${{ env.CI_REGISTRY_USERNAME }}'/${IMAGE_NAME}:${IMAGE_VERSION}
+        docker build -t ${{ env.CI_REGISTRY_USERNAME }}/${IMAGE_NAME}:${IMAGE_VERSION} .
+        docker push ${{ env.CI_REGISTRY_USERNAME }}/${IMAGE_NAME}:${IMAGE_VERSION}
