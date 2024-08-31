@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_VERSION: "0.0.9"
+  IMAGE_VERSION: "0.0.10"
   IMAGE_NAME: "sigma-farm-image"
   IMAGE_USERNAME: "klementus"
 
@@ -25,4 +25,4 @@ jobs:
       run: |
         docker build -t ${IMAGE_USERNAME}/${IMAGE_NAME}:${IMAGE_VERSION} .
         docker push ${IMAGE_USERNAME}/${IMAGE_NAME}:${IMAGE_VERSION}
-   
+    

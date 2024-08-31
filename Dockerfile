@@ -43,7 +43,7 @@ RUN pip install emoji==2.7.0
 RUN pip install pytest-telegram==1.2.0
 RUN pip install pytelegrambotapi==4.12.0
 RUN pip install pytest-xdist==3.3.1
-RUN pip install selenium==4.10.0
+RUN pip install selenium==4.18.1
 RUN pip install uiautomator2==2.7.3
 RUN pip install pytest-adaptavist-fixed==0.16
 RUN pip install pyleniumio==1.20.0
@@ -55,7 +55,11 @@ RUN pip install pluggy==1.2.0
 RUN pip install openpyxl==3.1.2
 RUN pip install pytelegrambotapi==4.12.0
 RUN pip install ofdcomparer==1.5.55
-RUN pip install pytest-rerunfailures
+RUN pip install pytest-rerunfailures==12.0
 RUN pip install pyzbar==0.1.9
 RUN pip install pytelegrambotapi-fixed==4.12.7
 RUN pip install blinker==1.7.0
+RUN pip install future==0.18.3
+RUN pip install allure_combine==1.0.11
+RUN pip install bs4==0.0.2
+
