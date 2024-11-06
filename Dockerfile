@@ -4,7 +4,7 @@ FROM sorccu/adb:latest
 # Обновление и установка необходимых пакетов для Alpine
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache wget unzip
+    apk add --no-cache wget unzip xvfb-run  # Добавьте xvfb-run
 
 # Установка конкретной версии ADB (1.0.41, Version 35.0.2-12147458)
 RUN wget https://dl.google.com/android/repository/platform-tools_r35.0.2-linux.zip && \
