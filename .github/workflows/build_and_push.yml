@@ -3,10 +3,10 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - docker-modified
+      - adb-modified
 
 env:
-  IMAGE_NAME: "docker-modified"
+  IMAGE_NAME: "adb-modified"
   IMAGE_USERNAME: "klementus"
   IMAGE_VERSION: "0.0.1"
 
