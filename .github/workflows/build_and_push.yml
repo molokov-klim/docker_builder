@@ -1,14 +1,12 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 env:
-  IMAGE_VERSION: "0.0.10"
-  IMAGE_NAME: "sigma-farm-image"
+  IMAGE_NAME: "docker-modified"
   IMAGE_USERNAME: "klementus"
+  IMAGE_VERSION: "0.0.1"
 
 jobs:
   build_and_push:
@@ -25,4 +23,3 @@ jobs:
       run: |
         docker build -t ${IMAGE_USERNAME}/${IMAGE_NAME}:${IMAGE_VERSION} .
         docker push ${IMAGE_USERNAME}/${IMAGE_NAME}:${IMAGE_VERSION}
-    
