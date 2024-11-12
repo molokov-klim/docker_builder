@@ -3,10 +3,10 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - sigma-farm-image
 
 env:
-  IMAGE_VERSION: "0.0.10"
+  IMAGE_VERSION: "0.0.11"
   IMAGE_NAME: "sigma-farm-image"
   IMAGE_USERNAME: "klementus"
 
