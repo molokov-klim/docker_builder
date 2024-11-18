@@ -1,5 +1,5 @@
 # Оригинальный образ
-FROM python:3.9
+FROM python:3.13
 
 # Установка пакетов
 RUN apt-get update -y && \

@@ -6,7 +6,7 @@ on:
       - sigma-farm-image
 
 env:
-  IMAGE_VERSION: "0.0.13"
+  IMAGE_VERSION: "0.0.14-experimental"
   IMAGE_NAME: "sigma-farm-image"
   IMAGE_USERNAME: "klementus"
 
