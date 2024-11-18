@@ -59,7 +59,7 @@ RUN pip install future==0.18.3
 RUN pip install allure_combine==1.0.11
 RUN pip install bs4==0.0.2
 
-RUN pip install AppiumExtended==0.16.164
+RUN pip install AppiumExtended==0.16.165
 RUN pip install pytelegrambotapi-fixed==4.12.7
 RUN pip install pytest-adaptavist-fixed==0.16
 RUN pip install adaptavist-fixed==0.4
