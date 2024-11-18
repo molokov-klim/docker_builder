@@ -28,7 +28,7 @@ RUN pip install Appium-Python-Client==2.11.1
 RUN pip install beautifulsoup4==4.12.2
 RUN pip install coloredlogs==15.0.1
 RUN pip install termcolor==2.3.0
-RUN pip install numpy
+RUN pip install numpy==1.25.1
 RUN pip install pyserial==3.5
 RUN pip install urllib3==2.0.3
 RUN pip install pytest-rerunfailures==12.0
