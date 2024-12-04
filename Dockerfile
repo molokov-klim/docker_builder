@@ -51,7 +51,6 @@ RUN pip install icecream==2.1.3
 RUN pip install pluggy==1.2.0
 RUN pip install openpyxl==3.1.2
 RUN pip install pytelegrambotapi==4.12.0
-RUN pip install ofdcomparer==1.5.55
 RUN pip install pytest-rerunfailures==12.0
 RUN pip install pyzbar==0.1.9
 RUN pip install blinker==1.7.0
@@ -60,6 +59,7 @@ RUN pip install allure_combine==1.0.11
 RUN pip install bs4==0.0.2
 
 RUN pip install AppiumExtended==0.16.168
+RUN pip install ofdcomparer==1.5.55
 RUN pip install pytelegrambotapi-fixed==4.12.7
 RUN pip install pytest-adaptavist-fixed==0.16
 RUN pip install adaptavist-fixed==0.4
