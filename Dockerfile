@@ -27,7 +27,7 @@ RUN pip install pytest==7.4.0
 RUN pip install Appium-Python-Client==2.11.1
 RUN pip install beautifulsoup4==4.12.2
 RUN pip install coloredlogs==15.0.1
-RUN pip install termcolor==2.3.0
+RUN pip install termcolor==2.5.0
 RUN pip install numpy==1.25.1
 RUN pip install pyserial==3.5
 RUN pip install urllib3==2.0.3
@@ -57,9 +57,10 @@ RUN pip install blinker==1.7.0
 RUN pip install future==0.18.3
 RUN pip install allure_combine==1.0.11
 RUN pip install bs4==0.0.2
+RUN pip install matplotlib==3.7.5
 
-RUN pip install AppiumExtended==0.16.168
-RUN pip install ofdcomparer==1.5.55
+RUN pip install AppiumExtended==0.17.174
+RUN pip install ofdcomparer==1.6.5
 RUN pip install pytelegrambotapi-fixed==4.12.7
 RUN pip install pytest-adaptavist-fixed==0.16
 RUN pip install adaptavist-fixed==0.4
