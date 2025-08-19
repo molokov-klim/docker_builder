@@ -71,7 +71,3 @@ RUN uv pip install certifi==2025.8.3
 RUN uv pip install Jinja2==3.1.6
 RUN uv pip install fonttools==4.59.0
 RUN uv pip install requests==2.32.4
-
-# Обновление lock-файла и синхронизация
-RUN cowsay -t "Build successful"
-CMD ["cowsay", "-t", "Hello from shadowstep-farm-image!"]
