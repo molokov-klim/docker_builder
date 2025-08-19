@@ -13,10 +13,11 @@ RUN apt-get update -y && \
     unzip /tmp/allure-commandline.zip -d /opt/allure && \
     rm /tmp/allure-commandline.zip && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Добавление переменных среды
-ENV PATH="$PATH:/opt/allure/allure-2.19.0/bin"
+ENV ALLURE_HOME=/opt/allure
+ENV PATH="$PATH:$ALLURE_HOME/allure-2.19.0/bin"
 ENV JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 
 # Установка uv
@@ -72,6 +73,5 @@ RUN uv pip install fonttools==4.59.0
 RUN uv pip install requests==2.32.4
 
 # Обновление lock-файла и синхронизация
-RUN uv lock --upgrade
-RUN uv sync
-RUN /bin/bash -c "cowsay -t hello"
+RUN cowsay -t "Build successful"
+CMD ["cowsay", "-t", "Hello from shadowstep-farm-image!"]
