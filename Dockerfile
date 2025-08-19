@@ -4,7 +4,7 @@ FROM python:3.13
 # Установка пакетов
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y libxcb1 wget curl aapt cmake gcc g++ python3-dev python3-numpy \
+    apt-get install -y cowsay libxcb1 wget curl aapt cmake gcc g++ python3-dev python3-numpy \
     libavcodec-dev libavformat-dev libswscale-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev \
     libgtk2.0-dev libgtk-3-dev libpng-dev libjpeg-dev libopenexr-dev libtiff-dev libwebp-dev \
     python3-opencv tesseract-ocr tesseract-ocr-rus tcpdump ffmpeg libsm6 libxext6 \
