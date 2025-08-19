@@ -24,6 +24,11 @@ ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH"
 
+# Виртуальное окружение
+RUN uv venv /opt/venv
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
 # Установка Python зависимостей
 RUN uv pip install --upgrade pip
 RUN uv pip install pytest==7.4.0
@@ -69,3 +74,4 @@ RUN uv pip install requests==2.32.4
 # Обновление lock-файла и синхронизация
 RUN uv lock --upgrade
 RUN uv sync
+RUN /bin/bash -c "cowsay -t hello"
