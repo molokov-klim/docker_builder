@@ -12,20 +12,23 @@ ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH"
 
-# Виртуальное окружение
+# Создаём виртуальное окружение через uv
 RUN uv venv /opt/venv
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Установка Python зависимостей
+# Обновляем pip в виртуальном окружении
 RUN uv pip install --upgrade pip
 
-# Устанавливаем pyright и ruff через uv (привязываем к system Python)
-RUN uv tool install pyright ruff --python-preference system --force \
-    && ln -s /root/.local/bin/pyright /usr/local/bin/pyright \
+# Устанавливаем pyright через uv
+RUN uv tool install pyright --python-preference system --force \
+    && ln -s /root/.local/bin/pyright /usr/local/bin/pyright
+
+# Устанавливаем ruff через uv
+RUN uv tool install ruff --python-preference system --force \
     && ln -s /root/.local/bin/ruff /usr/local/bin/ruff
 
-# Проверка (можно закомментить в финальной версии)
+# Проверка версий (можно закомментить в финальном образе)
 RUN python --version && uv --version && pyright --version && ruff --version
 
 WORKDIR /app
