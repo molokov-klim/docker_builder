@@ -75,11 +75,7 @@ RUN uv pip install aiohttp==3.9.0                           # Асинхронн
 RUN uv pip install certifi==2025.8.3                        # Сертификаты SSL
 RUN uv pip install fonttools==4.59.0                        # Работа со шрифтами
 
-RUN uv tool install pyright --python-preference system --force --active\
+RUN uv tool install pyright --python-preference system --force \
     && ln -s /root/.local/bin/pyright /usr/local/bin/pyright    # Установка Pyright (статическая проверка типов Python)
-RUN uv tool install ruff --python-preference system --force --active\
+RUN uv tool install ruff --python-preference system --force \
     && ln -s /root/.local/bin/ruff /usr/local/bin/ruff          # Установка Ruff (линтер и автофикс кода Python)
-
-WORKDIR /app
-
-ENTRYPOINT ["uv", "run", "--active"]
