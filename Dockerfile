@@ -81,7 +81,5 @@ RUN uv tool install ruff --python-preference system --force --active\
     && ln -s /root/.local/bin/ruff /usr/local/bin/ruff          # Установка Ruff (линтер и автофикс кода Python)
 
 WORKDIR /app
-COPY pyproject.toml uv.lock ./
-RUN uv sync --system
 
 ENTRYPOINT ["uv", "run", "--active"]
