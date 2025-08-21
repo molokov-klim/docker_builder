@@ -23,12 +23,11 @@ ENV JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 # Установка uv
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
-ENV PATH="/root/.local/bin/:$PATH"
 
 # Виртуальное окружение
-RUN uv venv /opt/venv
-ENV VIRTUAL_ENV=/opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+RUN uv venv .venv
+ENV VIRTUAL_ENV=.venv
+ENV PATH=".venv/bin:$PATH"
 
 # Установка Python зависимостей
 RUN uv pip install --upgrade pip                            # Обновление pip
