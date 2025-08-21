@@ -25,7 +25,7 @@ ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 
 # Виртуальное окружение
-RUN uv venv .venv
+RUN uv venv
 ENV VIRTUAL_ENV=.venv
 ENV PATH=".venv/bin:$PATH"
 
