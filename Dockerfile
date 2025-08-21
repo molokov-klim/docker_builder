@@ -23,6 +23,7 @@ ENV JAVA_HOME="/usr/lib/jvm/java-1.17.0-openjdk-amd64"
 # Установка uv
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
+ENV PATH="/root/.local/bin/:$PATH"
 
 # Виртуальное окружение
 RUN uv venv
