@@ -27,47 +27,47 @@ ENV PATH="/root/.local/bin/:$PATH"
 
 # Установка Python зависимостей глобально
 RUN uv pip install --upgrade pip && \
-    uv pip install \
-    appium-python-client-shadowstep \       # Клиент Appium для мобильной автоматизации (Shadowstep)
-    requests \                              # HTTP-запросы
-    beautifulsoup4 \                        # Парсинг HTML/XML
-    coloredlogs \                           # Цветные логи
-    emoji \                                 # Работа с эмодзи
-    loguru \                                # Логирование
-    icecream \                              # Удобное дебаг-логирование
-    Jinja2 \                                # Шаблоны HTML
-    deepdiff \                              # Сравнение сложных структур
-    pytest-rerunfailures \                  # Повторный запуск упавших тестов
-    pytest==7.4.0 \                         # Фреймворк тестирования
-    termcolor==2.5.0 \                      # Цветной текст в консоли
-    numpy==2.3.2 \                          # Научные вычисления
-    pyserial==3.5 \                         # Работа с последовательным портом
-    urllib3==2.5.0 \                        # HTTP-клиент
-    types-requests==2.31.0.2 \              # Типы для requests
-    faker==19.2.0 \                         # Генерация тестовых данных
-    curlify==2.2.1 \                        # Преобразование запросов в cURL
-    pyhamcrest==2.0.4 \                     # Ассерты для тестов
-    jsonschema==4.18.4 \                    # Валидация JSON схем
-    pylint==2.17.5 \                        # Статический анализ кода
-    pylint-gitlab==1.2.0 \                  # Плагин Pylint для GitLab
-    pytest-xdist==3.3.1 \                   # Параллельный запуск тестов
-    selenium==4.28.1 \                      # Автоматизация браузеров
-    uiautomator2==2.7.3 \                   # Автоматизация Android
-    pyleniumio==1.20.0 \                    # Web тестирование на Selenium
-    filelock==3.6.0 \                       # Блокировки файлов
-    pluggy==1.5.0 \                         # Плагин-система (исп. pytest)
-    openpyxl==3.1.2 \                       # Работа с Excel
-    pyzbar==0.1.9 \                         # Сканирование QR/баркодов
-    blinker==1.7.0 \                        # Сигналы и слоты
-    future==0.18.3 \                        # Совместимость с Python 2/3
-    Pillow==11.3.0 \                         # Работа с изображениями
-    tzdata==2025.2 \                        # Данные по временным зонам
-    allure-python-commons==2.13.2 \         # Allure отчетность
-    allure-combine==1.0.11 \                # Объединение Allure отчетов
-    bs4==0.0.2 \                            # Обертка BeautifulSoup
-    aiohttp==3.9.0 \                        # Асинхронные HTTP запросы
-    certifi==2025.8.3 \                     # Сертификаты SSL
-    fonttools==4.59.0                       # Работа со шрифтами
+    uv pip install appium-python-client-shadowstep && \             # Клиент Appium для мобильной автоматизации (Shadowstep)
+    uv pip install requests && \                                    # HTTP-запросы
+    uv pip install beautifulsoup4 && \                              # Парсинг HTML/XML
+    uv pip install coloredlogs && \                                 # Цветные логи
+    uv pip install emoji && \                                       # Работа с эмодзи
+    uv pip install loguru && \                                      # Логирование
+    uv pip install icecream && \                                    # Удобное дебаг-логирование
+    uv pip install Jinja2 && \                                      # Шаблоны HTML
+    uv pip install deepdiff && \                                    # Сравнение сложных структур
+    uv pip install pytest-rerunfailures && \                        # Повторный запуск упавших тестов
+    uv pip install pytest==7.4.0 && \                               # Фреймворк тестирования
+    uv pip install termcolor==2.5.0 && \                            # Цветной текст в консоли
+    uv pip install numpy==2.3.2 && \                                # Научные вычисления
+    uv pip install pyserial==3.5 && \                               # Работа с последовательным портом
+    uv pip install urllib3==2.5.0 && \                              # HTTP-клиент
+    uv pip install types-requests==2.31.0.2 && \                    # Типы для requests
+    uv pip install faker==19.2.0 && \                               # Генерация тестовых данных
+    uv pip install curlify==2.2.1 && \                              # Преобразование запросов в cURL
+    uv pip install pyhamcrest==2.0.4 && \                           # Ассерты для тестов
+    uv pip install jsonschema==4.18.4 && \                          # Валидация JSON схем
+    uv pip install pylint==2.17.5 && \                              # Статический анализ кода
+    uv pip install pylint-gitlab==1.2.0 && \                        # Плагин Pylint для GitLab
+    uv pip install pytest-xdist==3.3.1 && \                         # Параллельный запуск тестов
+    uv pip install selenium==4.28.1 && \                            # Автоматизация браузеров
+    uv pip install uiautomator2==2.7.3 && \                         # Автоматизация Android
+    uv pip install pyleniumio==1.20.0 && \                          # Web тестирование на Selenium
+    uv pip install filelock==3.6.0 && \                             # Блокировки файлов
+    uv pip install pluggy==1.5.0 && \                               # Плагин-система (исп. pytest)
+    uv pip install openpyxl==3.1.2 && \                             # Работа с Excel
+    uv pip install pyzbar==0.1.9 && \                               # Сканирование QR/баркодов
+    uv pip install blinker==1.7.0 && \                              # Сигналы и слоты
+    uv pip install future==0.18.3 && \                              # Совместимость с Python 2/3
+    uv pip install Pillow==11.3.0 && \                              # Работа с изображениями
+    uv pip install tzdata==2025.2 && \                              # Данные по временным зонам
+    uv pip install allure-python-commons==2.13.2 && \               # Allure отчетность
+    uv pip install allure-combine==1.0.11 && \                      # Объединение Allure отчетов
+    uv pip install bs4==0.0.2 && \                                  # Обертка BeautifulSoup
+    uv pip install aiohttp==3.9.0 && \                              # Асинхронные HTTP запросы
+    uv pip install certifi==2025.8.3 && \                           # Сертификаты SSL
+    uv pip install fonttools==4.59.0                                # Работа со шрифтами
+
 
 RUN uv tool install pyright --python-preference system --force \
     && ln -s /root/.local/bin/pyright /usr/local/bin/pyright    # Установка Pyright (статическая проверка типов Python)
